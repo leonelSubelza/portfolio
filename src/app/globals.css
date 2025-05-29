@@ -24,3 +24,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+::selection {
+  background: 	#bae6fd; /* Color de fondo de la selección */
+  color: #1c4bb1; /* Color del texto seleccionado */
+}
+
+.background-animation-gradient {
+	/* width: 100vw; */
+	/* height: 100vh; */
+	
+  /* background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e); */
+    background: linear-gradient(334deg,rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 50%, rgba(189, 189, 189, 1) 100%);
+
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
