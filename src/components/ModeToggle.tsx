@@ -43,7 +43,7 @@ export function ModeToggle() {
           // ${isLeft ? "translate-x-7" : "translate-x-0"}${isDark ? 'translate-x-7' : 'translate-x-0'}
         >
           {isLeft
-          ? <Sun className="w-4 h-4 text-yellow-400" />
+          ? <Sun className="w-4 h-4 text-slate-400" />
           : <Moon className="w-4 h-4 text-blue-600" />
         }
           {/* {isLeft
