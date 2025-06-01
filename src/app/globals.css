@@ -94,13 +94,14 @@
   --links-color: #333333;
   --links-hover: #666666; 
   --title: #000000 ;
-  --main-text: #1a1a1a ;
+  --main-text: #1a1a1a;
+  --particles-color: #333333;
 }
 
 .dark {
   /* --background: oklch(0.147 0.004 49.25); */
   /* --background: linear-gradient(90.21deg, rgba(170, 54, 124, .5) -5.91%, rgba(74, 47, 189, .5) 111.58%); */
-  --background: oklch(0.2354 0.051 292.24);
+  --background: #1f1934;
   
   --foreground: oklch(0.985 0.001 106.423);
   --card: oklch(0.216 0.006 56.043);
@@ -140,6 +141,7 @@
   --links-hover: oklch(0.7008 0.1812 48.13); 
   --title: oklch(0.7008 0.1812 48.13);
   --main-text: oklch(1 0 0);
+  --particles-color: #f9f9f9;
 }
 
 
@@ -160,10 +162,8 @@
 }
 
 html, body {
-  /* transition: background-color 0.5s ease, color 0.5s ease; */
   transition: background-color 0.5s ease;
 }
-
 
 ::selection {
   /* background:#bae6fd; Color de fondo de la selección */

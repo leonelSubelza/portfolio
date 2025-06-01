@@ -1,10 +1,14 @@
 "use client";
 
+import ParticlesContainer from "@/components/ParticlesContainer";
+
+
 export default function Home() {
   return (
     <>
+    <ParticlesContainer />
       <main className="flex flex-col max-w-7xl mx-auto px-4 font-[family-name:var(--font-fira-code)] 
-      bg-background">
+       z-<1> backdrop-blur-[5px]">
         {/* <div className="absolute left-[0px] z-[-1] w-full h-full background-animation-gradient"></div> */}
         <div id="" className="w-full h-[100dvh] flex flex-col items-center justify-center items-start">
           <h1 className="text-3xl mb-5 text-title font-bold">Full Stack Developer</h1>

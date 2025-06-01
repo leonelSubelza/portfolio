@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${roboto.variable} ${firaCode.variable} ${sourceCodePro.variable} antialiased bg-background`}
+        className={` ${roboto.variable} ${firaCode.variable} ${sourceCodePro.variable} antialiased bg-background`}
       >
         <ThemeProvider
           attribute="class"
@@ -40,27 +40,22 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex fixed justify-center items-center top-0 w-full z-[100] h-[7rem] backdrop-blur-[2px] text-lg font-[family-name:var(--font-source-code-pro)]">
+          <header className="flex fixed justify-center items-center top-0 w-full z-[100] h-[7rem] backdrop-blur-[5px] text-lg font-[family-name:var(--font-source-code-pro)]">
             <nav className="w-full max-w-7xl mx-auto px-4 py-2 h-full flex flex-wrap justify-between items-center">
               <div className="flex ml-5">Leonel Subelza</div>
               <div className="w-[50%] flex justify-between items-center">
                 <ul className="w-full flex flex-wrap justify-evenly items-center mx-3">
                   <li className="flex justify-center items-center text-links-color hover:text-links-hover">
-                    <a href="/">Home</a>
+                    <a href="/#">Home</a>
                   </li>
                   <li className="flex justify-center items-center hover:text-links-hover">
-                    <a href="/projects">Projects</a>
+                    <a href="/#projects">Projects</a>
                   </li>
                   <li className="flex justify-center items-center hover:text-links-hover">
-                    <a href="/contact">Contact</a>
+                    <a href="/#contact">Contact</a>
                   </li>
                 </ul>
-                <div className="w-[40%] mr-5 flex flex-wrap justify-between items-center">
-                  {/* <button>Dark/Light</button>
-                  <select name="select">
-                    <option value="value1">Spanish</option>
-                    <option value="value3">English</option>
-                  </select> */}
+                <div className="w-[50%] mr-5 flex flex-wrap justify-between items-center">
                   <ModeToggle />
                   <LanguageToggle />
                 </div>
