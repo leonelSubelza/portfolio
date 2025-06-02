@@ -1,6 +1,7 @@
 "use client";
 
 import ParticlesContainer from "@/components/ParticlesContainer";
+import ProjectsComponent from "@/components/projects-component/ProjectsComponent";
 
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
             my projects and get in touch!
           </p>
         </div>
+
+        <ProjectsComponent />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </>
