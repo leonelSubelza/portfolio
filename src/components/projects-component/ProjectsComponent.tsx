@@ -1,5 +1,6 @@
-import { Project, Technology } from '@/app/mock/entities'
-import React, { useState } from 'react'
+import { Technology } from '@/app/mock/entities'
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { DropdownTechnologies } from './DropdownTechnologies';
 import { projects } from '@/app/mock/projects.mock';
 import ProjectComponent from './ProjectComponent';
@@ -18,7 +19,7 @@ export default function ProjectsComponent() {
         </div>
         <span className='w-[33%]'></span>
       </div>
-      <div className='flex flex-row flex-wrap my-5'>
+      <div className='flex flex-wrap my-5'>
         {
           projects.map((project) => (
             <ProjectComponent key={project.id} project={project} />

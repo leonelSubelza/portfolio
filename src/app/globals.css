@@ -154,17 +154,17 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .mask-fade-x {
     mask-image: linear-gradient(to right, transparent, black 10%, black 80%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 80%, transparent);
   }
-}
+} */
 
 html, body {
   transition: background-color 0.5s ease;
   scrollbar-gutter: stable;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -173,27 +173,4 @@ html, body {
   /* color: #1c4bb1; Color del texto seleccionado */
   background-color: var(--selected-text-background);
   color: var(--selected-text-color);
-}
-
-.background-animation-gradient {
-	/* width: 100vw; */
-	/* height: 100vh; */
-
-  /* background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e); */
-    background: linear-gradient(334deg,rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 50%, rgba(189, 189, 189, 1) 100%);
-
-	background-size: 180% 180%;
-	animation: gradient-animation 6s ease infinite;
-}
-
-@keyframes gradient-animation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }

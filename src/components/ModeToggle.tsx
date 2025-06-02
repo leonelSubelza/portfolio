@@ -27,12 +27,13 @@ export function ModeToggle() {
 }
 
   return (
-    <>
       <button
         onClick={() => handleThemeToggle()}
         // onClick={() => setTheme(isDark ? 'light' : 'dark')}
         // onClick={() => setIsLeft(!isLeft)}
-        className="w-16 h-9 rounded-full bg-zinc-300 dark:bg-zinc-700 p-1 flex items-center transition-colors transition-all outline-none cursor-pointer"
+        className="w-16 h-9 rounded-full bg-zinc-300 
+        dark:bg-zinc-700 p-1 flex items-center transition-colors transition-all outline-none cursor-pointer
+        m-auto"
       >
         <div
           className={`
@@ -42,7 +43,7 @@ export function ModeToggle() {
         `}
           // ${isLeft ? "translate-x-7" : "translate-x-0"}${isDark ? 'translate-x-7' : 'translate-x-0'}
         >
-          {isLeft
+          {!isLeft
           ? <Sun className="w-4 h-4 text-slate-400" />
           : <Moon className="w-4 h-4 text-blue-600" />
         }
@@ -52,6 +53,5 @@ export function ModeToggle() {
         } */}
         </div>
       </button>
-    </>
   );
 }

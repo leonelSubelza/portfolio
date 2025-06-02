@@ -2,7 +2,7 @@
 
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
 import { useState } from "react"
-
+import { v4 as uuidv4 } from 'uuid';
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -60,9 +60,9 @@ export function DropdownTechnologies() {
         </DropdownMenuCheckboxItem> */}
 
         {
-          technologiesDropdown.map((technologies) => (
+          technologiesDropdown.map((technologies,index) => (
             <DropdownMenuCheckboxItem
-              key={technologies.technology.id}
+              key={technologies.technology.id+index}
               checked={technologies.checked}
               onCheckedChange={setShowStatusBar}
             >
