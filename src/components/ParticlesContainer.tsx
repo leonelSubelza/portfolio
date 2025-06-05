@@ -28,12 +28,12 @@ export default function ParticlesContainer() {
     if (theme === "dark") {
       setParticlesColor("#f9f9f9");
     } else {
-      setParticlesColor("#333333");
+      setParticlesColor("#4c516a");
     }
   }, [theme]);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+    // console.log(container);
   };
 
   const options: ISourceOptions = useMemo(

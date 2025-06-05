@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={` ${roboto.variable} ${firaCode.variable} ${sourceCodePro.variable} antialiased bg-background`}
+        className={`flex flex-col ${roboto.variable} ${firaCode.variable} ${sourceCodePro.variable} antialiased bg-background`}
       >
         <ThemeProvider
           attribute="class"
@@ -42,7 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex fixed justify-center items-center top-0 w-full z-[100] h-[7rem] font-[family-name:var(--font-source-code-pro)]">
+          <header className="flex fixed justify-center items-center top-0 w-full z-[20] h-[7rem] font-[family-name:var(--font-source-code-pro)] bg-background-header">
             <nav className="w-full max-w-7xl text-sm lg:text-lg mx-auto px-4 py-2 h-full flex justify-between items-center">
               <div className="flex ml-5">Leonel Subelza</div>
               <div className="w-[100%] md:w-[50%] lg:w-[50%] flex justify-between items-center">
@@ -57,7 +57,7 @@ export default function RootLayout({
                     <a href="/#contact">Contact</a>
                   </li>
                 </ul>
-                <div className="w-[50%] mr-5 flex flex-wrap justify-between items-center">
+                <div className="w-[50%] flex flex-wrap justify-between items-center">
                   <ModeToggle />
                   <LanguageToggle />
                 </div>

@@ -6,6 +6,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { ExternalLink } from "lucide-react";
 
 interface Props {
   project: Project;
@@ -22,21 +23,31 @@ export default function ProjectComponent({ project }: Props) {
   if (!mounted) return null; // o un loading spinner
 
   return (
-    <div className="
+    <div
+      className="
     h-[500px] w-[100%] md:w-[50%] lg:w-[33%]
-    flex flex-col overflow-y-auto overflow-x-hidden border border-black-200">
-      <div className="flex h-[50%] cursor-pointer">
-        <Link className="h-full w-full" target="_blank" href={project.url}>
-          <img
-            className={`h-full w-full ${theme === 'light' && 'filter grayscale contrast-120 brightness-90'}`}
-            // className={`h-full w-full`}
-            src={
-              project.image === ""
-                ? "https://andreag-portfolio.netlify.app/img/portfolio.webp"
-                : project.image
-            }
-          />
-        </Link>
+    flex flex-col overflow-y-auto overflow-x-hidden border border-black-200 bg-background-header"
+    >
+      <div className="flex h-[50%] relative">
+        <img
+          className={`h-full w-full ${
+            theme === "light" && "filter grayscale contrast-90 brightness-120"
+          }`}
+          // className={`h-full w-full`}
+          src={
+            project.image === ""
+              ? "https://andreag-portfolio.netlify.app/img/portfolio.webp"
+              : project.image
+          }
+        />
+        <span
+          className="opacity-[0] absolute flex w-full h-full top-[0] items-center justify-center
+           text-stone-50 hover:opacity-100 hover:bg-[#222222d0]"
+        >
+          <Link className="flex" target="_blank" href={project.url}>
+            View Code <ExternalLink className="ml-1" />
+          </Link>
+        </span>
       </div>
       <div className="h-[30%] flex flex-col p-3 ">
         <h1 className="text-xl">{project.title}</h1>
@@ -57,8 +68,11 @@ export default function ProjectComponent({ project }: Props) {
                       width={30}
                       height={30}
                       className={`inline-block m-1 rounded-[20%] ${
-                        theme === "light" &&
-                        "filter grayscale contrast-150 brightness-90"
+                        theme === "light" && tech.name === "React"
+                          ? "filter grayscale contrast-0 brightness-0"
+                          : theme === "light" &&
+                            tech.name !== "React" &&
+                            "filter grayscale contrast-90 brightness-120"
                       }`}
                     />
                   </TooltipTrigger>
@@ -67,7 +81,7 @@ export default function ProjectComponent({ project }: Props) {
               )
           )}
         </div>
-        <div className="w-[50%] flex justify-end items-end">
+        <div className="w-[50%] flex justify-end items-center">
           <Link target="_blank" href={project.url}>
             <Button variant="link" size="sm" className="cursor-pointer">
               <span className="text-xs">Source Code</span>
@@ -76,7 +90,9 @@ export default function ProjectComponent({ project }: Props) {
                 alt="github"
                 width={30}
                 height={30}
-                className="inline-block mr-2"
+                className={`inline-block mr-2 ${
+                  theme === "dark" && "filter invert-[1]"
+                }`}
               />
             </Button>
           </Link>
