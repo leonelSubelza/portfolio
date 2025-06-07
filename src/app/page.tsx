@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <>
       <ParticlesContainer />
-      <main className=" w-full flex flex-col justify-center items-center mx-auto px-4 font-[family-name:var(--font-fira-code)] 
+      <main className=" w-full h-full flex flex-col justify-center items-center mx-auto px-3 lg:px-4 font-[family-name:var(--font-fira-code)] 
        z-[10]">
-        <section id="" className="w-7xl max-w-7xl h-[100dvh] flex flex-col justify-center items-start">
+        <section id="" className="w-full h-[100dvh] lg:max-w-7xl
+        flex flex-col justify-center items-start">
           <h1 className="text-3xl mb-5 text-title font-bold">Full Stack Developer</h1>
           <p className="text-main-text text-left max-w-2xl">
             Welcome to my portfolio! I am a passionate full stack developer with

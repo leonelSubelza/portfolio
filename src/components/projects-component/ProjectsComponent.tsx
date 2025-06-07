@@ -47,15 +47,14 @@ const projectHasAnyTechnology = (
   };
 
   return (
-    <section id="projects" className="w-7xl max-w-7xl min-h-[100dvh] flex flex-col">
-      <div className="flex w-full pt-[7rem]">
+    <section id="projects" className="min-h-[100dvh] w-full pt-[7rem] lg:max-w-7xl flex flex-col">
+      <div className="flex w-full flex-wrap justify-between">
         <span className="w-[33%] justify-between">
           <h1 className="text-xl text-title font-bold">Proyectos</h1>
         </span>
-        <div className="w-[100%] flex items-center justify-end ">
+        <div className="min-w-[66%] flex items-center justify-end ml-auto mr-[0px]">
           <DropdownTechnologies onFilterApplied={handleFilterProjects} />
         </div>
-        {/* <span className="hidden lg:w-[33%]"></span> */}
       </div>
       <div className="flex flex-wrap my-5">
         {projectsShowed.map((project) => (

@@ -25,10 +25,10 @@ export default function ProjectComponent({ project }: Props) {
   return (
     <div
       className="
-    h-[500px] w-[100%] md:w-[50%] lg:w-[33%]
-    flex flex-col overflow-y-auto overflow-x-hidden border border-black-200 bg-background-header"
+    w-[100%] h-auto md:w-[50%] md:h-[500px] lg:w-[33%] lg:h-[500px]
+    flex flex-col overflow-y-auto overflow-x-hidden border border-black-200 bg-background-header my-2 lg:m-0"
     >
-      <div className="flex h-[50%] relative">
+      <div className="flex h-[217px] lg:h-[50%] relative">
         <img
           className={`h-full w-full ${
             theme === "light" && "filter grayscale contrast-90 brightness-120"
@@ -42,20 +42,20 @@ export default function ProjectComponent({ project }: Props) {
         />
         <span
           className="opacity-[0] absolute flex w-full h-full top-[0] items-center justify-center
-           text-stone-50 hover:opacity-100 hover:bg-[#222222d0]"
+           text-stone-50 transition duration-[0.3s] ease-in-out hover:opacity-100 hover:bg-[#222222d0]"
         >
           <Link className="flex" target="_blank" href={project.url}>
             View Code <ExternalLink className="ml-1" />
           </Link>
         </span>
       </div>
-      <div className="h-[30%] flex flex-col p-3 ">
+      <div className="md:h-[30%] lg:h-[30%] flex flex-col p-3 ">
         <h1 className="text-xl">{project.title}</h1>
         <div className="overflow-y-auto overflow-x-hidden text-start m-auto">
           <p className="text-xs">{project.description}</p>
         </div>
       </div>
-      <div className="h-[10%] flex flex-wrap px-3 justify-between">
+      <div className="lg:h-[10%] flex flex-wrap px-3 pb-2 lg:pb-0 justify-between">
         <div className="w-[50%] flex flex-wrap justify-start items-center overflow-y-auto">
           {project.technologies.map(
             (tech: Technology) =>

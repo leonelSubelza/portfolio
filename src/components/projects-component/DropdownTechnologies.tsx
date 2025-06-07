@@ -95,7 +95,7 @@ export function DropdownTechnologies({ onFilterApplied }: Props) {
 
   return (
     <>
-      <div className="flex flex-wrap border border-black-500">
+      <div className="flex flex-wrap">
         {technologiesSelected.map((tech: TechnologyDropdown) => (
           <Badge
             variant="outline"
@@ -114,8 +114,8 @@ export function DropdownTechnologies({ onFilterApplied }: Props) {
             />
             {tech.technology.name}
             <Button
-              className="opacity-0 group-hover:opacity-100 w-[12px] h-[12px] rounded-full cursor-pointer transition-opacity duration-200"
-              variant={"outline"}
+              className="lg:opacity-0 group-hover:opacity-100 w-[12px] h-[12px] rounded-full cursor-pointer transition-opacity duration-200"
+              variant={"ghost"}
               size={"icon"}
               onClick={() => handleItemTechnologyChange(tech)}
             >

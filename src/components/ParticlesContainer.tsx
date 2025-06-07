@@ -46,6 +46,8 @@ export default function ParticlesContainer() {
       fpsLimit: 60,
       interactivity: {
         events: {
+          // onClick: { enable: true, mode: "push" },
+          // onHover: { enable: true, mode: "grab" },
           onClick: { enable: true, mode: "push" },
           onHover: { enable: true, mode: "grab" },
         },
@@ -93,6 +95,7 @@ export default function ParticlesContainer() {
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
+      className={`hidden md:block lg:block`}
     />
   );
 }

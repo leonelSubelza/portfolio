@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ModeToggle";
 import LanguageToggle from "@/components/LanguageToggle";
+import Navbar from "@/components/navbar/Navbar";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -42,27 +43,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex fixed justify-center items-center top-0 w-full z-[20] h-[7rem] font-[family-name:var(--font-source-code-pro)] bg-background-header">
-            <nav className="w-full max-w-7xl text-sm lg:text-lg mx-auto px-4 py-2 h-full flex justify-between items-center">
-              <div className="flex ml-5">Leonel Subelza</div>
-              <div className="w-[100%] md:w-[50%] lg:w-[50%] flex justify-between items-center">
-                <ul className="w-full flex flex-wrap justify-evenly items-center mx-3">
-                  <li className="flex justify-center items-center text-links-color hover:text-links-hover">
-                    <a href="/#">Home</a>
-                  </li>
-                  <li className="flex justify-center items-center hover:text-links-hover">
-                    <a href="/#projects">Projects</a>
-                  </li>
-                  <li className="flex justify-center items-center hover:text-links-hover">
-                    <a href="/#contact">Contact</a>
-                  </li>
-                </ul>
-                <div className="w-[50%] flex flex-wrap justify-between items-center">
-                  <ModeToggle />
-                  <LanguageToggle />
-                </div>
-              </div>
-            </nav>
+          <header className="flex fixed justify-center items-center top-0 w-full px-3 z-[20] h-[7rem] font-[family-name:var(--font-source-code-pro)] bg-background-header">
+            <Navbar />
           </header>
           {children}
         </ThemeProvider>
