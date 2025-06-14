@@ -15,6 +15,17 @@ export default function ParticlesContainer() {
   const { theme} = useTheme();
   const [init, setInit] = useState(false);
   const [particlesColor, setParticlesColor] = useState<string>("#000");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 720);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  },[]);
 
   // Cargar engine solo una vez
   useEffect(() => {
@@ -48,8 +59,8 @@ export default function ParticlesContainer() {
         events: {
           // onClick: { enable: true, mode: "push" },
           // onHover: { enable: true, mode: "grab" },
-          onClick: { enable: true, mode: "push" },
-          onHover: { enable: true, mode: "grab" },
+          onClick: { enable: isMobile ? false : true, mode: "push" },
+          onHover: { enable: isMobile ? false : true, mode: "grab" },
         },
         modes: {
           grab: {
@@ -76,6 +87,7 @@ export default function ParticlesContainer() {
         number: {
           density: { enable: true },
           value: 80,
+          limit:81
         },
         opacity: { value: 0.5 },
         shape: { type: "circle" },
@@ -85,7 +97,7 @@ export default function ParticlesContainer() {
       },
       detectRetina: true,
     }),
-    [particlesColor], // Muy importante: depende del color
+    [particlesColor,isMobile], // Muy importante: depende del color
   );
 
   if (!init) return null;
@@ -95,7 +107,6 @@ export default function ParticlesContainer() {
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
-      className={`hidden md:block lg:block`}
     />
   );
 }

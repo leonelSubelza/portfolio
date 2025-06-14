@@ -56,8 +56,12 @@ const projectHasAnyTechnology = (
           <DropdownTechnologies onFilterApplied={handleFilterProjects} />
         </div>
       </div>
-      <div className="flex flex-wrap my-5">
-        {projectsShowed.map((project) => (
+      <div className="flex flex-wrap my-5 flex-grow">
+        {
+        (projectsShowed && projectsShowed.length===0) ?
+        <div className="w-full flex-grow flex justify-center items-center"><span>No hay elementos para mostrar</span></div>
+        :
+        projectsShowed.map((project) => (
           <ProjectComponent key={project.id} project={project} />
         ))}
       </div>

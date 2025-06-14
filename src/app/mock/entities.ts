@@ -10,6 +10,12 @@ export interface Project {
   title: string;
   description: string;
   image: string;
-  url: string;
+  url?: string;
+  githubUrl: string;
+  createdAt: Date;
+  finishedAt?: Date;
+  highlighted?: boolean;
+  duration?: string;
+  teamSize?: number;
   technologies: Technology[];
 }
