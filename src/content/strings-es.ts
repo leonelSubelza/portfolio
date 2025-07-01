@@ -1,4 +1,4 @@
-export const strings = {
+export const stringsEs = {
   title: "Desarrollador Fullstack",
   description:
     "Graduado de Técnico Universitario en Informática, con experiencia en desarrollo de aplicaciones web utilizando tecnologías modernas de frontend y backend.",
@@ -10,6 +10,10 @@ export const strings = {
   },
   projects: {
     title: "Proyectos",
+    filter: {
+      title: 'Tecnologías',
+      label: 'Filtrar por'
+    },
     noElementsText: "No hay elementos para mostrar",
     demoText: "Live demo",
     codeText: "Source Code"

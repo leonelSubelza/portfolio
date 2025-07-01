@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Roboto, Fira_Code, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/ModeToggle";
-import LanguageToggle from "@/components/LanguageToggle";
 import Navbar from "@/components/navbar/Navbar";
 
 const roboto = Roboto({

@@ -1,4 +1,4 @@
-export const strings = {
+export const stringsEn = {
   title: "Full Stack Developer",
   description: "Graduate of the Technical University of Computer Science, with experience in web application development using modern front-end and back-end technologies.",
   navbar: {
@@ -9,6 +9,10 @@ export const strings = {
   },
   projects: {
     title: "Proyects",
+    filter: {
+      title: 'Technologies',
+      label: 'Filter by'
+    },
     noElementsText: "No elements to show",
     demoText: "Live demo",
     codeText: "Source Code"

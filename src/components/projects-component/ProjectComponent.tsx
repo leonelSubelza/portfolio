@@ -1,12 +1,12 @@
 import { Project, Technology } from "@/mock/entities";
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { ExternalLink } from "lucide-react";
+import { SettingsState, useSettingsStore } from "@/store/settings";
 
 interface Props {
   project: Project;
@@ -15,6 +15,7 @@ interface Props {
 export default function ProjectComponent({ project }: Props) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const language = useSettingsStore((s: SettingsState) => s.language);
 
   useEffect(() => {
     setMounted(true);
@@ -58,7 +59,7 @@ export default function ProjectComponent({ project }: Props) {
       <div className="md:h-[30%] lg:h-[30%] flex flex-col p-3">
         <h1 className="text-xl">{project.title}</h1>
         <div className="overflow-y-auto overflow-x-hidden text-start m-auto w-full">
-          <p className="text-xs">{project.description}</p>
+          <p className="text-xs">{language==='es' ? project.description : project.descriptionEn}</p>
         </div>
       </div>
       <div className="lg:h-[20%] flex flex-wrap px-3 pb-2 lg:pb-0 justify-between">

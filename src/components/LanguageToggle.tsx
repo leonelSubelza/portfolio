@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { SettingsState, useSettingsStore } from "@/store/settings";
 
 const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
   return (
@@ -29,7 +30,8 @@ const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
 };
 
 export default function LanguageToggle() {
-  const [language, setLanguage] = useState<string>("spanish");
+  const language = useSettingsStore((s: SettingsState) => s.language);
+  const setLanguage = useSettingsStore((s: SettingsState) => s.setLanguage);
 
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -44,7 +46,7 @@ export default function LanguageToggle() {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          {language === "spanish"
+          {language === "es"
             ? getDropdownMenuItem("/flags/ar.svg", "Spanish",theme as string)
             : getDropdownMenuItem("/flags/us.svg", "English",theme as string)}
 
@@ -52,10 +54,10 @@ export default function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage("spanish")}>
+        <DropdownMenuItem onClick={() => setLanguage("es")}>
           {getDropdownMenuItem("/flags/ar.svg", "Spanish",theme as string)}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("english")}>
+        <DropdownMenuItem onClick={() => setLanguage("en")}>
           {getDropdownMenuItem("/flags/us.svg", "English",theme as string)}
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -18,6 +18,9 @@ import { v4 as uuidv4 } from "uuid";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { stringsEs } from "@/content/strings-es";
+import { stringsEn } from "@/content/strings-en";
+import { SettingsState, useSettingsStore } from "@/store/settings";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
@@ -41,9 +44,8 @@ interface Props {
 }
 
 export function DropdownTechnologies({ onFilterApplied }: Props) {
-  // const [showStatusBar, setShowStatusBar] = useState<Checked>(true);
-  // const [showActivityBar, setShowActivityBar] = useState<Checked>(false);
-  // const [showPanel, setShowPanel] = useState<Checked>(false);
+  const language = useSettingsStore((s: SettingsState) => s.language);
+  const strings = language === "es" ? stringsEs : stringsEn;
 
   const { theme } = useTheme();
   const [technologiesDropdown, setTechnologiesDropdown] = useState<
@@ -127,11 +129,11 @@ export function DropdownTechnologies({ onFilterApplied }: Props) {
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="cursor-pointer">
-            <ChevronDown /> Tecnologías
+            <ChevronDown /> {strings.projects.filter.title}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel>Filtrar</DropdownMenuLabel>
+          <DropdownMenuLabel>{strings.projects.filter.label}</DropdownMenuLabel>
 
           <DropdownMenuSeparator />
 

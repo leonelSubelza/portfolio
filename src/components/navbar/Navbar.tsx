@@ -27,9 +27,6 @@ export default function Navbar() {
           <li className="flex justify-center items-center hover:text-links-hover">
             <a href="/#projects">Projects</a>
           </li>
-          {/* <li className="flex justify-center items-center hover:text-links-hover">
-            <a href="/#contact">Contact</a>
-          </li> */}
         </ul>
         <div className="w-[50%] flex flex-wrap justify-between items-center">
           <ModeToggle />

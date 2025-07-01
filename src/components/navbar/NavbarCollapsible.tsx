@@ -1,6 +1,4 @@
-import { Menu } from "lucide-react";
 import React from "react";
-import { Button } from "../ui/button";
 import { ModeToggle } from "../ModeToggle";
 import LanguageToggle from "../LanguageToggle";
 
