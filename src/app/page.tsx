@@ -1,5 +1,4 @@
 "use client";
-import ParticlesContainer from "@/components/ParticlesContainer";
 import ProjectsComponent from "@/components/projects-component/ProjectsComponent";
 import { SettingsState, useSettingsStore } from "@/store/settings";
 import { useEffect, useState } from "react";
@@ -19,7 +18,6 @@ export default function Home() {
 
   return (
     <>
-      <ParticlesContainer />
       <main
         className=" w-full h-full flex flex-col justify-center items-center mx-auto px-3 lg:px-4 font-[family-name:var(--font-fira-code)] 
        z-[10]"

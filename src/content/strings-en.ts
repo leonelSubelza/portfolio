@@ -17,4 +17,12 @@ export const stringsEn = {
     demoText: "Live demo",
     codeText: "Source Code"
   },
+  errors: {
+    notFound: {
+      title: "Page not found",
+      description: "Sorry, the page you are looking for doesn't exist.",
+      backToHome: "Go back to home"
+    },
+    error: 'Something went wrong, try again!',
+  }
 };

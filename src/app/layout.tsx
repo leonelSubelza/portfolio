@@ -3,6 +3,7 @@ import { Roboto, Fira_Code, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar/Navbar";
+import ParticlesContainer from "@/components/ParticlesContainer";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -44,6 +45,7 @@ export default function RootLayout({
           <header className="flex fixed justify-center items-center top-0 w-full px-3 z-[20] h-[7rem] font-[family-name:var(--font-source-code-pro)] bg-background-header">
             <Navbar />
           </header>
+          <ParticlesContainer />
           {children}
         </ThemeProvider>
       </body>
