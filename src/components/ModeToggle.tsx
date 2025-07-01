@@ -43,7 +43,7 @@ export function ModeToggle() {
         `}
           // ${isLeft ? "translate-x-7" : "translate-x-0"}${isDark ? 'translate-x-7' : 'translate-x-0'}
         >
-          {!isLeft
+          {isLeft
           ? <Sun className={`w-4 h-4 text-yellow-600 ${theme === "light" && "filter grayscale contrast-90 brightness-120"}`} />
           : <Moon className={`w-4 h-4 text-slate-400 ${theme === "light" && "filter grayscale contrast-90 brightness-120"}`} />
         }

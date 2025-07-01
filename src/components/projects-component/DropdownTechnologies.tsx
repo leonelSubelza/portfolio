@@ -11,8 +11,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Technology } from "@/app/mock/entities";
-import { technologies } from "@/app/mock/entities.mock";
+import { Technology } from "@/mock/entities";
+import { technologies } from "@/mock/technologies.mock";
 import { ChevronDown, X } from "lucide-react";
 import { v4 as uuidv4 } from "uuid";
 import { Badge } from "../ui/badge";

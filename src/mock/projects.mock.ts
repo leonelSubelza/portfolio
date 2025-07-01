@@ -1,5 +1,5 @@
 import { Project } from "./entities";
-import { getTechnology } from "./entities.mock";
+import { getTechnology } from "./technologies.mock";
 import { v4 as uuidv4 } from "uuid";
 
 export const projects: Project[] = [
@@ -8,11 +8,13 @@ export const projects: Project[] = [
     title: "Noviembre Café",
     description:
       "Página realizada para la cafetería Noviembre Café la cual previamente estaba realizada en Wordpress",
+    descriptionEn:
+      "Page created for the Noviembre Café coffee shop, which was previously created in Wordpress",
     image: "/projects-images/noviembre-cafe.png",
     url: "https://giovannisiaa.github.io/Noviembre-Cafe.github.io/",
     githubUrl: "https://github.com/leonelSubelza/Noviembre-Cafe.github.io",
-    createdAt: new Date('2024-01-15'),
-    finishedAt: new Date('2024-01-21'),
+    createdAt: new Date("2024-01-15"),
+    finishedAt: new Date("2024-01-21"),
     highlighted: true,
     duration: "9 días",
     teamSize: 2,
@@ -25,13 +27,13 @@ export const projects: Project[] = [
   {
     id: uuidv4(),
     title: "Sudoku Game",
-    description:
-      "Juego de Sudoku hecho en Nextjs v15",
+    description: "Juego de Sudoku hecho en Nextjs v15",
+    descriptionEn: "Sudoku game made in Next Js v15",
     image: "/projects-images/sudoku-game.png",
     url: "https://leonelsubelza.github.io/sudoku-game/",
     githubUrl: "https://github.com/leonelSubelza/sudoku-game",
-    createdAt: new Date('2025-01-17'),
-    finishedAt: new Date('2025-02-17'),
+    createdAt: new Date("2025-01-17"),
+    finishedAt: new Date("2025-02-17"),
     highlighted: true,
     duration: "1 mes",
     teamSize: 1,
@@ -46,13 +48,13 @@ export const projects: Project[] = [
   {
     id: uuidv4(),
     title: "Mecanografía App",
-    description:
-      "Juego de mecanografía hecho en Angular v18",
+    description: "Juego de mecanografía hecho en Angular v18",
+    descriptionEn: "Typing game made in Angular v18",
     image: "/projects-images/mecanografia-app.png",
     url: "https://leonelsubelza.github.io/mecanografia-app/",
     githubUrl: "https://github.com/leonelSubelza/mecanografia-app",
-    createdAt: new Date('2024-06-07'),
-    finishedAt: new Date('2024-09-07'),
+    createdAt: new Date("2024-06-07"),
+    finishedAt: new Date("2024-09-07"),
     highlighted: true,
     duration: "3 meses",
     teamSize: 1,
@@ -69,11 +71,13 @@ export const projects: Project[] = [
     title: "Sistema Productos",
     description:
       "Sistema web de gestión y promoción de productos del usuario. Sistema desarrollado para que el usuario pueda promocionar sus productos en venta y gestionarlos mediante una interfaz propia. Se desarrolló en React y Spring con base de datos Mysql.",
+    descriptionEn:
+      "Web-based system for managing and promoting user products. A system developed so users can promote and manage their products through a custom interface. It was developed in React and Spring with a MySQL database.",
     image: "/projects-images/sistema-productos.png",
     url: "https://leonelsubelza.github.io/Sistema-Productos/",
     githubUrl: "https://github.com/leonelSubelza/Sistema-Productos",
-    createdAt: new Date('2023-01-30'),
-    finishedAt: new Date('2024-07-18'),
+    createdAt: new Date("2023-01-30"),
+    finishedAt: new Date("2024-07-18"),
     highlighted: true,
     duration: "7 meses",
     teamSize: 2,
@@ -92,10 +96,12 @@ export const projects: Project[] = [
     title: "API Foro Alura - Challenge ONE",
     description:
       "Desarrollo de una API para el foro de la página de Alura - Oracle ONE el cual realiza consultas hacia la base de datos de la página. El servicio se construyó usando Spring junto con seguridad JWT y Swagger para brindar una interfaz para los endpoints de la api.",
+    descriptionEn:
+      "Development of an API for the Alura - Oracle ONE forum page, which performs queries against the page's database. The service was built using Spring along with JWT security and Swagger to provide an interface to the API endpoints.",
     image: "/projects-images/api-alura-spring.png",
     githubUrl: "https://github.com/leonelSubelza/Challenge-ONE-Foro-Alura-API",
-    createdAt: new Date('2023-05-15'),
-    finishedAt: new Date('2023-06-19'),
+    createdAt: new Date("2023-05-15"),
+    finishedAt: new Date("2023-06-19"),
     highlighted: false,
     duration: "1 mes",
     teamSize: 1,
@@ -112,28 +118,28 @@ export const projects: Project[] = [
     title: "Alura Hotel - Challenge ONE",
     description:
       "Aplicación desktop hecha en Java con Swing siguiendo un patrón MVC para el programa de formación de Oracle ONE. Consiste en una aplicación de hotel donde se podrá gestionar las reservas hechas en el mismo.",
+    descriptionEn:
+      "Desktop application created in Java with Swing following an MVC pattern for the Oracle ONE training program. It consists of a hotel application for managing hotel reservations.",
     image: "/projects-images/alura-hotel.png",
-    githubUrl: "https://github.com/leonelSubelza/Alura-Hotel-Challenge-ONE-Java",
-    createdAt: new Date('2023-04-27'),
-    finishedAt: new Date('2023-05-15'),
+    githubUrl:
+      "https://github.com/leonelSubelza/Alura-Hotel-Challenge-ONE-Java",
+    createdAt: new Date("2023-04-27"),
+    finishedAt: new Date("2023-05-15"),
     highlighted: false,
     duration: "1 mes",
     teamSize: 1,
-    technologies: [
-      getTechnology("java"),
-      getTechnology("mysql"),
-    ],
+    technologies: [getTechnology("java"), getTechnology("mysql")],
   },
   {
     id: uuidv4(),
     title: "Wordle Clon",
-    description:
-      "Clon del popular juego Wordle hecho en React",
+    description: "Clon del popular juego Wordle hecho en React",
+    descriptionEn: "Clone of the popular Wordle game made in React.",
     image: "/projects-images/wordle-clon.png",
     url: "https://giovannisiaa.github.io/Wordle-Clon/",
     githubUrl: "https://github.com/leonelSubelza/Wordle-Clon",
-    createdAt: new Date('2023-01-09'),
-    finishedAt: new Date('2023-01-26'),
+    createdAt: new Date("2023-01-09"),
+    finishedAt: new Date("2023-01-26"),
     highlighted: true,
     duration: "1 mes",
     teamSize: 2,
@@ -149,11 +155,13 @@ export const projects: Project[] = [
     title: "Chat App",
     description:
       "Chat virtual realizado con React y Spring Boot, permite crear salas de chat y enviar mensajes en tiempo real entre los usuarios conectados.",
+    descriptionEn:
+      "Virtual chat built with React and Spring Boot, allowing you to create chat rooms and send messages in real time between connected users.",
     image: "/projects-images/chat-app.jpg",
     url: "https://leonelsubelza.github.io/chat-app-v2/",
     githubUrl: "https://github.com/leonelSubelza/chat-app-v2",
-    createdAt: new Date('2023-11-03'),
-    finishedAt: new Date('2024-01-27'),
+    createdAt: new Date("2023-11-03"),
+    finishedAt: new Date("2024-01-27"),
     highlighted: true,
     duration: "3 meses",
     teamSize: 2,
@@ -172,11 +180,14 @@ export const projects: Project[] = [
     title: "Encriptador de Texto",
     description:
       "Encriptador de Texto es un proyecto realizado para el primer desafío del programa de formación de Oracle ONE, consiste en una aplicación web que permite encriptar y desencriptar mensajes utilizando un conjunto de reglas específicas.",
+    descriptionEn:
+      "Text Encryptor is a project developed for the first challenge of the Oracle ONE training program. It consists of a web application that allows you to encrypt and decrypt messages using a set of specific rules.",
     image: "/projects-images/encriptador-de-texto.png",
     url: "https://leonelsubelza.github.io/Challenge-Oracle-ONE-Encriptador-de-Texto/",
-    githubUrl: "https://github.com/leonelSubelza/Challenge-Oracle-ONE-Encriptador-de-Texto",
-    createdAt: new Date('2022-12-20'),
-    finishedAt: new Date('2023-01-03'),
+    githubUrl:
+      "https://github.com/leonelSubelza/Challenge-Oracle-ONE-Encriptador-de-Texto",
+    createdAt: new Date("2022-12-20"),
+    finishedAt: new Date("2023-01-03"),
     highlighted: false,
     duration: "2 semanas",
     teamSize: 1,
@@ -191,10 +202,12 @@ export const projects: Project[] = [
     title: "War Game",
     description:
       "Proyecto realizado para la materia Organización del Computador, consiste en un juego de guerra por turnos, donde cada jugador debe destruir la base secreta del oponente oculta en un mapa hecho en texto plano.",
+    descriptionEn:
+      "A project carried out for the subject Computer Organization, consists of a turn-based war game, where each player must destroy the opponent's secret base hidden in a map made in plain text.",
     image: "/projects-images/war-games.png",
     githubUrl: "https://github.com/leonelSubelza/War-Games-Assembler",
-    createdAt: new Date('2019-10-29'),
-    finishedAt: new Date('2019-11-25'),
+    createdAt: new Date("2019-10-29"),
+    finishedAt: new Date("2019-11-25"),
     highlighted: false,
     duration: "1 meses",
     teamSize: 1,
@@ -205,11 +218,13 @@ export const projects: Project[] = [
     title: "Sistema Empresa de Calzado",
     description:
       "Proyecto final realizado para la materia Laboratorio de Construcción de Software, última materia de la carrera Tecnicatura Universitaria en Informática de la Universidad Nacional de General Sarmiento.",
+    descriptionEn:
+      "Final project for the Software Construction Laboratory course, the final subject of the University Technician's degree in Computer Science at the National University of General Sarmiento.",
     image: "/projects-images/sistema-zapateria.png",
     url: "https://www.youtube.com/watch?v=YawYgWzxTy0",
     githubUrl: "https://github.com/leonelSubelza/TP-Empresa-De-Calzado",
-    createdAt: new Date('2021-10-2'),
-    finishedAt: new Date('2021-11-25'),
+    createdAt: new Date("2021-10-2"),
+    finishedAt: new Date("2021-11-25"),
     highlighted: false,
     duration: "2 meses",
     teamSize: 6,

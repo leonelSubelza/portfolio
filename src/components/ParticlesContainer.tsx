@@ -87,7 +87,6 @@ export default function ParticlesContainer() {
         number: {
           density: { enable: true },
           value: 80,
-          limit:81
         },
         opacity: { value: 0.5 },
         shape: { type: "circle" },

@@ -1,11 +1,15 @@
-import { Project, Technology } from "@/app/mock/entities";
+import { Project, Technology } from "@/mock/entities";
 import React, { useState } from "react";
 
 import { DropdownTechnologies } from "./DropdownTechnologies";
-import { projects } from "@/app/mock/projects.mock";
+import { projects } from "@/mock/projects.mock";
 import ProjectComponent from "./ProjectComponent";
 
-export default function ProjectsComponent() {
+interface Props {
+  isSpanish: boolean;
+}
+
+export default function ProjectsComponent({isSpanish}: Props) {
   const [filters, setFilters] = useState<Technology[]>([]);
 
   const [projectsShowed, setProjectsShowed] = useState<Project[]>([
@@ -23,25 +27,17 @@ const projectHasAnyTechnology = (
 
   const handleFilterProjects = (technologiesToShow: Technology[]) => {
     if (!technologiesToShow || technologiesToShow.length <= 0) {
-      console.log("filtro vacio, se muestra todo");
       setProjectsShowed([...projects]);
       return;
     }
     let allProjects = [...projects];
-    console.log("All projects: "+allProjects.length);
     
     let filteredProjects: Project[] = [];
     allProjects.forEach((project: Project) => {
       if (projectHasAnyTechnology(project, technologiesToShow)) {
-        console.log("se agrega para mostrar a projecto: "+project.title);
-        
         filteredProjects.push(project);
       }
     });
-    console.log("projects filtrados:");
-    console.log(filteredProjects);
-    console.log("technologias a mostrar");
-    console.log(technologiesToShow);
 
     setProjectsShowed(filteredProjects);
   };

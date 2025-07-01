@@ -1,4 +1,4 @@
-import { Project, Technology } from "@/app/mock/entities";
+import { Project, Technology } from "@/mock/entities";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";

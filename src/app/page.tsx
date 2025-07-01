@@ -1,17 +1,14 @@
 "use client";
 import ParticlesContainer from "@/components/ParticlesContainer";
 import ProjectsComponent from "@/components/projects-component/ProjectsComponent";
-import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 //       <main className="flex flex-col max-w-7xl mx-auto px-4 font-[family-name:var(--font-fira-code)]
 //  z-<1> backdrop-blur-[5px]">
 
 export default function Home() {
-  const { theme } = useTheme();
+  const {  } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -109,7 +106,7 @@ export default function Home() {
           </div> */}
         </section>
 
-        <ProjectsComponent />
+        <ProjectsComponent isSpanish={true}/>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </>
