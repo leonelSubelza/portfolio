@@ -10,7 +10,7 @@ export const projects: Project[] = [
       "Página realizada para la cafetería Noviembre Café la cual previamente estaba realizada en Wordpress",
     descriptionEn:
       "Page created for the Noviembre Café coffee shop, which was previously created in Wordpress",
-    image: "/projects-images/noviembre-cafe.png",
+    image: "/projects-images/noviembre-cafe.webp",
     url: "https://giovannisiaa.github.io/Noviembre-Cafe.github.io/",
     githubUrl: "https://github.com/leonelSubelza/Noviembre-Cafe.github.io",
     createdAt: new Date("2024-01-15"),
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "Sudoku Game",
     description: "Juego de Sudoku hecho en Nextjs v15",
     descriptionEn: "Sudoku game made in Next Js v15",
-    image: "/projects-images/sudoku-game.png",
+    image: "/projects-images/sudoku-game.webp",
     url: "https://leonelsubelza.github.io/sudoku-game/",
     githubUrl: "https://github.com/leonelSubelza/sudoku-game",
     createdAt: new Date("2025-01-17"),
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "Sistema web de gestión y promoción de productos del usuario. Sistema desarrollado para que el usuario pueda promocionar sus productos en venta y gestionarlos mediante una interfaz propia. Se desarrolló en React y Spring con base de datos Mysql.",
     descriptionEn:
       "Web-based system for managing and promoting user products. A system developed so users can promote and manage their products through a custom interface. It was developed in React and Spring with a MySQL database.",
-    image: "/projects-images/sistema-productos.png",
+    image: "/projects-images/sistema-productos.webp",
     url: "https://leonelsubelza.github.io/Sistema-Productos/",
     githubUrl: "https://github.com/leonelSubelza/Sistema-Productos",
     createdAt: new Date("2023-01-30"),
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       "Aplicación desktop hecha en Java con Swing siguiendo un patrón MVC para el programa de formación de Oracle ONE. Consiste en una aplicación de hotel donde se podrá gestionar las reservas hechas en el mismo.",
     descriptionEn:
       "Desktop application created in Java with Swing following an MVC pattern for the Oracle ONE training program. It consists of a hotel application for managing hotel reservations.",
-    image: "/projects-images/alura-hotel.png",
+    image: "/projects-images/alura-hotel.webp",
     githubUrl:
       "https://github.com/leonelSubelza/Alura-Hotel-Challenge-ONE-Java",
     createdAt: new Date("2023-04-27"),
@@ -157,7 +157,7 @@ export const projects: Project[] = [
       "Chat virtual realizado con React y Spring Boot, permite crear salas de chat y enviar mensajes en tiempo real entre los usuarios conectados.",
     descriptionEn:
       "Virtual chat built with React and Spring Boot, allowing you to create chat rooms and send messages in real time between connected users.",
-    image: "/projects-images/chat-app.jpg",
+    image: "/projects-images/chat-app.webp",
     url: "https://leonelsubelza.github.io/chat-app-v2/",
     githubUrl: "https://github.com/leonelSubelza/chat-app-v2",
     createdAt: new Date("2023-11-03"),
@@ -182,7 +182,7 @@ export const projects: Project[] = [
       "Encriptador de Texto es un proyecto realizado para el primer desafío del programa de formación de Oracle ONE, consiste en una aplicación web que permite encriptar y desencriptar mensajes utilizando un conjunto de reglas específicas.",
     descriptionEn:
       "Text Encryptor is a project developed for the first challenge of the Oracle ONE training program. It consists of a web application that allows you to encrypt and decrypt messages using a set of specific rules.",
-    image: "/projects-images/encriptador-de-texto.png",
+    image: "/projects-images/encriptador-de-texto.webp",
     url: "https://leonelsubelza.github.io/Challenge-Oracle-ONE-Encriptador-de-Texto/",
     githubUrl:
       "https://github.com/leonelSubelza/Challenge-Oracle-ONE-Encriptador-de-Texto",
@@ -220,7 +220,7 @@ export const projects: Project[] = [
       "Proyecto final realizado para la materia Laboratorio de Construcción de Software, última materia de la carrera Tecnicatura Universitaria en Informática de la Universidad Nacional de General Sarmiento.",
     descriptionEn:
       "Final project for the Software Construction Laboratory course, the final subject of the University Technician's degree in Computer Science at the National University of General Sarmiento.",
-    image: "/projects-images/sistema-zapateria.png",
+    image: "/projects-images/sistema-zapateria.webp",
     url: "https://www.youtube.com/watch?v=YawYgWzxTy0",
     githubUrl: "https://github.com/leonelSubelza/TP-Empresa-De-Calzado",
     createdAt: new Date("2021-10-2"),

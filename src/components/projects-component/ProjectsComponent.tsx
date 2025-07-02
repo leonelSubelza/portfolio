@@ -5,8 +5,8 @@ import { DropdownTechnologies } from "./DropdownTechnologies";
 import { projects } from "@/mock/projects.mock";
 import ProjectComponent from "./ProjectComponent";
 import { SettingsState, useSettingsStore } from "@/store/settings";
-import  { stringsEs }  from "@/content/strings-es";
-import  { stringsEn }  from "@/content/strings-en";
+import { stringsEs } from "@/content/strings-es";
+import { stringsEn } from "@/content/strings-en";
 
 const projectHasAnyTechnology = (
   project: Project,
@@ -17,10 +17,19 @@ const projectHasAnyTechnology = (
   );
 };
 
+const projectHasAllTechnologies = (
+  project: Project,
+  techs: Technology[]
+): boolean => {
+  return techs.every((tech) =>
+    project.technologies.some((ptech) => ptech.id === tech.id)
+  );
+};
+
 export default function ProjectsComponent() {
   // const [filters, setFilters] = useState<Technology[]>([]);
   const language = useSettingsStore((s: SettingsState) => s.language);
-  const strings = language === 'es' ? stringsEs : stringsEn;
+  const strings = language === "es" ? stringsEs : stringsEn;
 
   const [projectsShowed, setProjectsShowed] = useState<Project[]>([
     ...projects,
@@ -35,7 +44,10 @@ export default function ProjectsComponent() {
 
     let filteredProjects: Project[] = [];
     allProjects.forEach((project: Project) => {
-      if (projectHasAnyTechnology(project, technologiesToShow)) {
+      // if (projectHasAnyTechnology(project, technologiesToShow)) {
+      //   filteredProjects.push(project);
+      // }
+      if (projectHasAllTechnologies(project, technologiesToShow)) {
         filteredProjects.push(project);
       }
     });
@@ -50,7 +62,9 @@ export default function ProjectsComponent() {
     >
       <div className="flex w-full flex-wrap justify-between">
         <span className="w-[33%] justify-between">
-          <h1 className="text-xl text-title font-bold">{strings.projects.title}</h1>
+          <h1 className="text-xl text-title font-bold">
+            {strings.projects.title}
+          </h1>
         </span>
         <div className="min-w-[66%] flex items-center justify-end ml-auto mr-[0px]">
           <DropdownTechnologies onFilterApplied={handleFilterProjects} />

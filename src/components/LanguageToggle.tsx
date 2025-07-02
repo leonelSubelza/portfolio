@@ -21,7 +21,7 @@ const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
         alt={alt}
         width={20}
         height={20}
-        className={`inline-block mr-2 ${
+        className={`inline-block w-[20px] h-[20px] mr-2 ${
           theme === "light" && "filter grayscale contrast-90 brightness-120"
         }`}
       />

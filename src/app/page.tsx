@@ -10,11 +10,11 @@ export default function Home() {
   const language = useSettingsStore((s: SettingsState) => s.language);
   const strings = language === "es" ? stringsEs : stringsEn;
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  if (!mounted) return null; // o un loading spinner
+  // if (!mounted) return null;
 
   return (
     <>
