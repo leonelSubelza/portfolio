@@ -11,19 +11,27 @@ import {
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { SettingsState, useSettingsStore } from "@/store/settings";
+import { stringsEs } from "@/content/strings-es";
+import { stringsEn } from "@/content/strings-en";
 
 interface Props {
   onClick?: () => void;
 }
 
 
-const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
+const getDropdownMenuItem = (source: string, lan: string ,strings: any, theme: string) => {
   return (
     <div className="flex flex-row items-center justify-center">
-      <span className="mr-1">{alt}</span>
+      {
+        lan === 'es' ?
+        <span className="mr-1">{strings.navbar.languages.spanish}</span>
+        :
+        <span className="mr-1">{strings.navbar.languages.english}</span>
+      }
+      
       <Image
         src={source}
-        alt={alt}
+        alt={lan}
         width={20}
         height={20}
         className={`inline-block w-[20px] h-[20px] mr-2 ${
@@ -41,6 +49,8 @@ export default function LanguageToggle({ onClick }: Props) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  const strings = language === "es" ? stringsEs : stringsEn;
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -57,18 +67,18 @@ export default function LanguageToggle({ onClick }: Props) {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
           {language === "es"
-            ? getDropdownMenuItem("/flags/ar.svg", "Spanish",theme as string)
-            : getDropdownMenuItem("/flags/us.svg", "English",theme as string)}
+            ? getDropdownMenuItem("/flags/ar.svg", "es",strings,theme as string)
+            : getDropdownMenuItem("/flags/us.svg", "en",strings,theme as string)}
 
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => onItemChosen("es")}>
-          {getDropdownMenuItem("/flags/ar.svg", "Spanish",theme as string)}
+          {getDropdownMenuItem("/flags/ar.svg", "es",strings,theme as string)}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => onItemChosen("en")}>
-          {getDropdownMenuItem("/flags/us.svg", "English",theme as string)}
+          {getDropdownMenuItem("/flags/us.svg", "en",strings,theme as string)}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

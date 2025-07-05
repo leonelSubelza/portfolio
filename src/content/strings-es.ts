@@ -6,6 +6,11 @@ export const stringsEs = {
     home: "Home",
     projects: "Projectos",
     contact: "Contacto",
+    animation: "Animación",
+    languages: {
+      english: "Inglés",
+      spanish: "Español",
+    },
   },
   projects: {
     title: "Proyectos",
@@ -23,6 +28,6 @@ export const stringsEs = {
       description: "Lo sentimos, la página que estás buscando no existe.",
       backToHome: "Volver al inicio",
     },
-    error: 'Algo salió mal, ¡inténtalo de nuevo!',
+    error: "Algo salió mal, ¡inténtalo de nuevo!",
   },
 };

@@ -2,6 +2,9 @@ import React from "react";
 import { ModeToggle } from "../ModeToggle";
 import LanguageToggle from "../LanguageToggle";
 import AnimationToggle from "../AnimationToggle";
+import { SettingsState, useSettingsStore } from "@/store/settings";
+import { stringsEs } from "@/content/strings-es";
+import { stringsEn } from "@/content/strings-en";
 
 interface Props {
   show: boolean;
@@ -9,6 +12,9 @@ interface Props {
 }
 
 export default function NavbarCollapsible({ show, onShowChange }: Props) {
+  const language = useSettingsStore((s: SettingsState) => s.language);
+  const strings = language === "es" ? stringsEs : stringsEn;
+
   return (
     <>
       <div
@@ -40,7 +46,7 @@ export default function NavbarCollapsible({ show, onShowChange }: Props) {
           <li
             className="flex mt-[0px] mb-2 cursor-pointer justify-center items-center hover:text-links-hover"
           >
-            <span>Animation </span>
+            <span>{strings.navbar.animation} </span>
             <AnimationToggle onClick={onShowChange} />
           </li>
           <li

@@ -5,7 +5,11 @@ export const stringsEn = {
     home: "Home",
     projects: "Projects",
     contact: "Contact",
-
+    animation: "Animation",
+    languages: {
+      english: 'English',
+      spanish: 'Spanish',
+    },
   },
   projects: {
     title: "Proyects",
