@@ -1,47 +1,57 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
-import { ModeToggle } from "../ModeToggle";
-import LanguageToggle from "../LanguageToggle";
 import NavbarCollapsible from "./NavbarCollapsible";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [showNavbarCollapsible, setShowNavbarCollapsible] = useState<boolean>(false);
+  const [showNavbarCollapsible, setShowNavbarCollapsible] =
+    useState<boolean>(false);
 
   return (
     <>
-    <nav className="flex w-full max-w-7xl text-sm lg:text-lg lg:px-4 py-2 h-full flex justify-between items-center z-[20] ">
-      <div className="flex text-lg">
-        <Link className="flex" target="_blank" href={"https://github.com/leonelSubelza"}>
-          Leonel Subelza
-        </Link>
-      </div>
-      <div className="hidden lg:flex w-[100%] lg:w-[55%] lg:w-[50%] justify-between items-center text-lg">
-        <ul className="w-full flex flex-wrap justify-evenly items-center mx-3">
-          <li className="flex justify-center items-center text-links-color hover:text-links-hover">
-            <a href="/#">Home</a>
-          </li>
-          <li className="flex justify-center items-center hover:text-links-hover">
-            <a href="/#projects">Projects</a>
-          </li>
-        </ul>
-        <div className="w-[50%] flex flex-wrap justify-between items-center">
-          <ModeToggle />
-          <LanguageToggle />
+      <nav className="flex w-full h-full max-w-7xl text-sm  px-3 py-[0px]! justify-between items-center z-[20]
+      lg:text-lg">
+        <div className="flex text-sm ">
+          <Link
+            className="flex"
+            target="_blank"
+            href={"https://github.com/leonelSubelza"}
+          >
+            Leonel Subelza
+          </Link>
         </div>
-      </div>
-      <div className="mg:hidden lg:hidden flex flex-wrap justify-center items-end">
-        <Button variant={"ghost"} onClick={()=>setShowNavbarCollapsible(!showNavbarCollapsible)}>
-          <Menu />
-        </Button>
-      </div>
-    </nav>
-    <NavbarCollapsible 
-    show={showNavbarCollapsible} 
-    onShowChange={()=>setShowNavbarCollapsible(!showNavbarCollapsible)}/>
+        <div
+          className="flex justify-end items-center text-lg 
+      lg:w-[30%]
+      "
+        >
+          <ul className="hidden w-full flex flex-wrap justify-evenly items-center mx-3 lg:flex">
+            <li className="flex justify-center items-center text-links-color hover:text-links-hover">
+              <a href="/#">Home</a>
+            </li>
+            <li className="flex justify-center items-center hover:text-links-hover">
+              <a href="/#projects">Projects</a>
+            </li>
+          </ul>
+
+          <div className="flex flex-wrap justify-end items-end">
+            <Button
+              variant={"ghost"}
+              className="hover:cursor-pointer px-[0px]!"
+              onClick={() => setShowNavbarCollapsible(!showNavbarCollapsible)}
+            >
+              <Menu />
+            </Button>
+          </div>
+        </div>
+      </nav>
+      <NavbarCollapsible
+        show={showNavbarCollapsible}
+        onShowChange={() => setShowNavbarCollapsible(!showNavbarCollapsible)}
+      />
     </>
   );
 }

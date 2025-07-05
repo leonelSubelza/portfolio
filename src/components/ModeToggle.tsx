@@ -5,7 +5,11 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export function ModeToggle() {
+interface Props {
+  onClick?: () => void;
+}
+
+export function ModeToggle({ onClick }: Props ) {
   const { theme, setTheme } = useTheme();
   const [isLeft, setIsLeft] = useState<boolean>(true);
   const [mounted, setMounted] = useState(false);
@@ -26,6 +30,7 @@ export function ModeToggle() {
     setTimeout(() => {
       setTheme(isDark ? "light" : "dark");
       setThemeStore(isDark ? "light" : "dark");
+      if(onClick) onClick();
     }, 500);
   };
 

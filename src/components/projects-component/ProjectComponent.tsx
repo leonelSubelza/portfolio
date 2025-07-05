@@ -21,7 +21,7 @@ export default function ProjectComponent({ project }: Props) {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // o un loading spinner
+  if (!mounted) return null; 
 
   return (
     <div
@@ -29,7 +29,6 @@ export default function ProjectComponent({ project }: Props) {
     w-[100%] h-auto md:w-[50%] md:h-[500px] lg:w-[33%] lg:h-[500px]
     flex flex-col overflow-y-auto overflow-x-hidden border border-black-200 bg-background-header my-2 lg:m-0"
     >
-      {/* h-[217px] md:h-[50%] lg:h-[50%]*/}
       <div className="m-auto flex w-full md:h-[50%] lg:h-[50%] relative  hover:bg-[#222222d0]">
         <img
           className={`m-auto w-full h-full object-contain lg:object-fill
@@ -58,7 +57,7 @@ export default function ProjectComponent({ project }: Props) {
       </div>
       <div className="md:h-[30%] lg:h-[30%] flex flex-col p-3">
         <h1 className="text-xl">{project.title}</h1>
-        <div className="overflow-y-auto overflow-x-hidden text-start m-auto w-full">
+        <div className="overflow-y-auto overflow-x-hidden pt-2 text-start m-auto w-full">
           <p className="text-xs">{language==='es' ? project.description : project.descriptionEn}</p>
         </div>
       </div>

@@ -8,14 +8,14 @@ import { SettingsState, useSettingsStore } from "@/store/settings";
 import { stringsEs } from "@/content/strings-es";
 import { stringsEn } from "@/content/strings-en";
 
-const projectHasAnyTechnology = (
-  project: Project,
-  techs: Technology[]
-): boolean => {
-  return project.technologies.some((ptech) =>
-    techs.some((tech) => ptech.id === tech.id)
-  );
-};
+// const projectHasAnyTechnology = (
+//   project: Project,
+//   techs: Technology[]
+// ): boolean => {
+//   return project.technologies.some((ptech) =>
+//     techs.some((tech) => ptech.id === tech.id)
+//   );
+// };
 
 const projectHasAllTechnologies = (
   project: Project,
@@ -58,7 +58,7 @@ export default function ProjectsComponent() {
   return (
     <section
       id="projects"
-      className="min-h-[100dvh] w-full pt-[7rem] lg:max-w-7xl flex flex-col"
+      className="flex flex-col min-h-[100dvh] w-full max-w-7xl pt-[7rem] px-3 "
     >
       <div className="flex w-full flex-wrap justify-between">
         <span className="w-[33%] justify-between">

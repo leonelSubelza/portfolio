@@ -10,12 +10,14 @@ import {
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { useTheme } from "next-themes";
+import { SettingsState, useSettingsStore } from "@/store/settings";
 
 export default function ParticlesContainer() {
   const { theme} = useTheme();
   const [init, setInit] = useState(false);
   const [particlesColor, setParticlesColor] = useState<string>("#000");
   const [isMobile, setIsMobile] = useState(false);
+  const enableAnimations = useSettingsStore((s: SettingsState) => s.enableAnimations);
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -102,10 +104,11 @@ export default function ParticlesContainer() {
   if (!init) return null;
 
   return (
-    <Particles
+    enableAnimations ? <Particles
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
-    />
+    /> : null
+    
   );
 }

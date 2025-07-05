@@ -12,6 +12,11 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { SettingsState, useSettingsStore } from "@/store/settings";
 
+interface Props {
+  onClick?: () => void;
+}
+
+
 const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
   return (
     <div className="flex flex-row items-center justify-center">
@@ -29,7 +34,7 @@ const getDropdownMenuItem = (source: string, alt: string, theme: string) => {
   );
 };
 
-export default function LanguageToggle() {
+export default function LanguageToggle({ onClick }: Props) {
   const language = useSettingsStore((s: SettingsState) => s.language);
   const setLanguage = useSettingsStore((s: SettingsState) => s.setLanguage);
 
@@ -41,6 +46,11 @@ export default function LanguageToggle() {
   }, []);
 
   if (!mounted) return null; // o un loading spinner
+
+  const onItemChosen = (lang: string) => {
+    setLanguage(lang);
+    if (onClick) onClick();
+  }
 
   return (
     <DropdownMenu modal={false}>
@@ -54,10 +64,10 @@ export default function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage("es")}>
+        <DropdownMenuItem onClick={() => onItemChosen("es")}>
           {getDropdownMenuItem("/flags/ar.svg", "Spanish",theme as string)}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage("en")}>
+        <DropdownMenuItem onClick={() => onItemChosen("en")}>
           {getDropdownMenuItem("/flags/us.svg", "English",theme as string)}
         </DropdownMenuItem>
       </DropdownMenuContent>
