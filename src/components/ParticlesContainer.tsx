@@ -13,11 +13,13 @@ import { useTheme } from "next-themes";
 import { SettingsState, useSettingsStore } from "@/store/settings";
 
 export default function ParticlesContainer() {
-  const { theme} = useTheme();
+  const { theme } = useTheme();
   const [init, setInit] = useState(false);
   const [particlesColor, setParticlesColor] = useState<string>("#000");
   const [isMobile, setIsMobile] = useState(false);
-  const enableAnimations = useSettingsStore((s: SettingsState) => s.enableAnimations);
+  const enableAnimations = useSettingsStore(
+    (s: SettingsState) => s.enableAnimations
+  );
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -27,7 +29,7 @@ export default function ParticlesContainer() {
     checkIsMobile();
     window.addEventListener("resize", checkIsMobile);
     return () => window.removeEventListener("resize", checkIsMobile);
-  },[]);
+  }, []);
 
   // Cargar engine solo una vez
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function ParticlesContainer() {
   }, [theme]);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    // console.log(container);
+    console.log(container);
   };
 
   const options: ISourceOptions = useMemo(
@@ -98,17 +100,16 @@ export default function ParticlesContainer() {
       },
       detectRetina: true,
     }),
-    [particlesColor,isMobile], // Muy importante: depende del color
+    [particlesColor, isMobile]
   );
 
   if (!init) return null;
 
-  return (
-    enableAnimations ? <Particles
+  return enableAnimations ? (
+    <Particles
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
-    /> : null
-    
-  );
+    />
+  ) : null;
 }

@@ -31,7 +31,7 @@ interface TechnologyDropdown {
 }
 
 const getTechnologyDropdownItems = (): TechnologyDropdown[] => {
-  let technologiesAux: Technology[] = technologies;
+  const technologiesAux: Technology[] = technologies;
   return technologiesAux.map((tech) => ({
     id: uuidv4(),
     technology: tech,
