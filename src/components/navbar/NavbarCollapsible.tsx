@@ -5,6 +5,7 @@ import AnimationToggle from "../AnimationToggle";
 import { SettingsState, useSettingsStore } from "@/store/settings";
 import { stringsEs } from "@/content/strings-es";
 import { stringsEn } from "@/content/strings-en";
+import Link from "next/link";
 
 interface Props {
   show: boolean;
@@ -32,13 +33,13 @@ export default function NavbarCollapsible({ show, onShowChange }: Props) {
             onClick={() => onShowChange()}
             className="lg:hidden mt-[0px] mb-2 flex justify-center items-center text-links-color hover:text-links-hover "
           >
-            <a href="/#">Home</a>
+            <Link href="#home" scroll={true}>Home</Link>
           </li>
           <li
             onClick={() => onShowChange()}
             className="lg:hidden mt-[0px] mb-2 flex justify-center items-center hover:text-links-hover"
           >
-            <a href="/#projects">Projects</a>
+            <Link href="#projects" scroll={true}>Projects</Link>
           </li>
           {/* <li onClick={()=>onShowChange()} className="lg:hidden mt-[0px] mb-2 flex justify-center items-center hover:text-links-hover">
             <a href="/#contact">Contact</a>

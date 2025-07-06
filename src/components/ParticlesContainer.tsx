@@ -47,9 +47,9 @@ export default function ParticlesContainer() {
     }
   }, [theme]);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
+  // const particlesLoaded = async (container?: Container): Promise<void> => {
+  //   console.log(container);
+  // };
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -108,7 +108,7 @@ export default function ParticlesContainer() {
   return enableAnimations ? (
     <Particles
       id="tsparticles"
-      particlesLoaded={particlesLoaded}
+      // particlesLoaded={particlesLoaded}
       options={options}
     />
   ) : null;

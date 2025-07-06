@@ -12,8 +12,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex w-full h-full max-w-7xl text-sm  px-3 py-[0px]! justify-between items-center z-[20]
-      lg:text-lg">
+      <nav
+        className="flex w-full h-full max-w-7xl text-sm  px-3 py-[0px]! justify-between items-center z-[20]
+      lg:text-lg"
+      >
         <div className="flex text-sm ">
           <Link
             className="flex"
@@ -30,10 +32,10 @@ export default function Navbar() {
         >
           <ul className="hidden w-full flex flex-wrap justify-evenly items-center mx-3 lg:flex">
             <li className="flex justify-center items-center text-links-color hover:text-links-hover">
-              <a href="/#">Home</a>
+              <Link href="#home" scroll={true}>Home</Link>
             </li>
             <li className="flex justify-center items-center hover:text-links-hover">
-              <a href="/#projects">Projects</a>
+              <Link href="#projects" scroll={true}>Projects</Link>
             </li>
           </ul>
 

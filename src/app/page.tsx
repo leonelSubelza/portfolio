@@ -15,7 +15,7 @@ export default function Home() {
        z-[10] overflow-x-hidden"
       >
         <section
-          id=""
+          id="home"
           className="w-full max-w-7xl h-screen px-3 
         flex flex-col justify-center items-start"
         >
