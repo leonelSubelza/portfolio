@@ -88,7 +88,7 @@ export const technologies: Technology[] = [
     id: uuidv4(),
     key: "jwt",
     name: "Jwt",
-    icon: "/icons/jwt.png",
+    icon: "/icons/jwt.svg",
   },
   {
     id: uuidv4(),
